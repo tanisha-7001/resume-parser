@@ -14,7 +14,7 @@ def parse_resume(path, job_title):
             break
 
     # skills
-    keywords = ['Python', 'JavaScript', 'React', 'Node.js', 'Java', 'C++', 'SQL', 'HTML',
+    keywords = ['Python','Maven','Jenkins','Oracle', 'JavaScript', 'React', 'Node.js', 'Java', 'C++', 'SQL', 'HTML',
                 'CSS', 'Docker', 'Kubernetes', 'AWS', 'Azure', 'GCP']
     skills = [k for k in keywords if k in text]
 
@@ -28,31 +28,30 @@ def parse_resume(path, job_title):
     # LinkedIn 
     linkedin = None
     for line in lines:
-        match = re.search(r'linkedin\.com/in/\S+', line)
+        match = re.search(r'linkedin\.com/\S+', line, re.IGNORECASE)
         if match:
             linkedin = match.group()
             break
     
     # years of experience
     yoe = None
-    yoe_pattern = r'\d+\s*(years|yrs)'
+    yoe_pattern = r'(\d+)\s*(years|yrs)'
     for line in lines:
         match = re.search(yoe_pattern, line, re.IGNORECASE)
         if match:
             yoe = match.group(1) + ' years'
             break
 
-    # job title 
-    job_title_present = 'Yes' if re.search(rf'\b{job_title}\b', text, re.IGNORECASE) else 'No'
+    # title 
+    job= 'Yes' if re.search(rf'\b{job_title}\b', text, re.IGNORECASE) else 'No'
 
     print("Name:", name)
     print("Email:", email)
     print("LinkedIn:", linkedin)
     print("Tech Skills:", ', '.join(skills))
     print("Years of Experience:", yoe)
-    print(f"Job Title ({job_title}):", job_title_present)
+    print(f"Job Title ({job_title}):", job)
 
-# Usage
-path = "C:/Users/Tanisha Singh/Desktop/resume/resume2.pdf"
-job_title = "Web Developer" 
+path = "Sachin-Sangle.pdf"
+job_title = "Project Manager" 
 parse_resume(path, job_title)
