@@ -1,3 +1,4 @@
+## Resume Parsing Application
 This project is a **Resume Parser** application that extracts relevant information from resumes (PDF and Word formats) and stores it in a SQLite database. It utilizes Natural Language Processing (NLP) techniques to identify key elements such as email addresses, years of experience, and technical skills. The application features a web interface built with **Streamlit**, allowing users to search and rank resumes based on their specified criteria.
 
 **Features**
@@ -18,8 +19,10 @@ This project is a **Resume Parser** application that extracts relevant informati
 - **`abcd/`**: This directory contains the resumes to be processed. The parser extracts information from PDF and Word documents stored in this folder.
 
 ## Requirements
-Install dependencies using:
+-Install dependencies using:  
+```python
 pip install os sqlite3 PyPDF2 re docx streamlit hashlib spacy scikit-learn
+```
 
 ## Path Configuration
 
@@ -39,7 +42,11 @@ pip install os sqlite3 PyPDF2 re docx streamlit hashlib spacy scikit-learn
 
 
 ## Run the Streamlit App:
-streamlit run test.py  
-OR 
-python -m streamlit run test.py    
+```python
+ streamlit run test.py
+```
+OR
+```python
+python -m streamlit run test.py
+```
 
