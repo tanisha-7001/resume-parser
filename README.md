@@ -16,3 +16,30 @@ This project is a **Resume Parser** application that extracts relevant informati
 - **`new_resumes.db`**: The SQLite database file where extracted resume data is stored. It includes tables for resume entries with details such as filename, email, experience, technical skills, and a hash of the resume content.
 
 - **`abcd/`**: This directory contains the resumes to be processed. The parser extracts information from PDF and Word documents stored in this folder.
+
+## Requirements
+Install dependencies using:
+pip install os sqlite3 PyPDF2 re docx streamlit hashlib spacy scikit-learn
+
+## Path Configuration
+
+1. **Resume Folder Path (`resume_folder_path`)**:
+   - Update the `folder_path` variable to the path where your `.pdf` and `.docx` resumes are stored.
+   - Example in code:
+     ```python
+     folder_path = "C:/Users/Tanisha Singh/Desktop/resume/abcd"  # Update this to user's path
+     ```
+
+2. **Download Path for Streamlit**:
+   - Update the `file_path` used for generating download links in Streamlit to the folder where your resumes are located.
+   - Example in code:
+     ```python
+     file_path = os.path.join("C:/Users/Tanisha Singh/Desktop/resume/abcd", filename)  # Update this to user's path
+     ```
+
+
+## Run the Streamlit App:
+streamlit run test.py  
+OR 
+python -m streamlit run test.py    
+
