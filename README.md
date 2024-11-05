@@ -50,3 +50,20 @@ OR
 python -m streamlit run test.py
 ```
 
+## View Database Contents: 
+To view the stored resume data in new_resumes.db, run the following command:
+```python
+streamlit run view_resume_table.py
+```
+OR  
+```python
+python -m streamlit run view_resume_table.py
+```
+
+
+
+
+
+
+
+
